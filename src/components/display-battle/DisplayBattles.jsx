@@ -34,7 +34,7 @@ const DisplayBattles = ({ match }) => {
 
   return (
     <div className="battles-container">
-      <Contenders />
+      <Contenders {...match} />
       <div className="battles-wrapper">
         <LeftCont {...info[0]} />
         <RightCont {...info[1]} />
