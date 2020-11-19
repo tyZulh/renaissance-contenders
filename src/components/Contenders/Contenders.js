@@ -2,7 +2,7 @@ import ContendersCircles from './ContendersCircles';
 
 import './Contenders.css';
 
-const Contenders = ({name}) => {
+const Contenders = ({}) => {
     return (
         <div className='contenders__container'>
             <div className='contenders__container__title'>
