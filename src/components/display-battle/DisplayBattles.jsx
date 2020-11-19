@@ -1,5 +1,5 @@
 // import Axios from "axios";
-import "./DisplayBattles.scss";
+import "./DisplayBattles.css";
 import Card from "../card/Card";
 import Contenders from "../Contenders/Contenders";
 
@@ -15,10 +15,9 @@ const info = [
     comment: "good vibes",
   },
   {
-    name: "Boob",
-    url:
-      "https://i2-prod.mirror.co.uk/incoming/article6982466.ece/ALTERNATES/s615b/Kanye-West.jpg",
-    artist: "Boob",
+    name: "Booba",
+    url: "http://antiquipop.hypotheses.org/files/2018/01/Booba-Trone-3.jpg",
+    artist: "Booba",
     nbrVote: "0",
     style: "music",
     nationality: "USA",

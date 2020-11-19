@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./Navigation.scss";
+import "./Navigation.css";
 
 const Navigation = () => {
   const menu = ["Philosophie", "Musique", "Tableaux", "Mode"];
