@@ -40,8 +40,7 @@ const DisplayBattles = ({ match }) => {
     }
     const tempFight = [contenders[random[0]], contenders[random[1]]];
     setFighters(tempFight);
-    
-  },[]);
+  }, []);
 
   useEffect(() => {
     const rebours = setTimeout(() => {
@@ -52,12 +51,16 @@ const DisplayBattles = ({ match }) => {
       clearInterval(rebours);
       setRemTime(10);
 
-      const randomOne = Math.floor(Math.random() * Math.abs(contenders.length - 1));
-      let randomTwo = Math.floor(Math.random() * Math.abs(contenders.length - 1));
+      const randomOne = Math.floor(
+        Math.random() * Math.abs(contenders.length - 1)
+      );
+      let randomTwo = Math.floor(
+        Math.random() * Math.abs(contenders.length - 1)
+      );
       if (randomOne === randomTwo) {
         randomTwo = contenders.length - 1;
       }
-      console.log(contenders.length)
+      console.log(contenders.length);
       const tempFight = [contenders[randomOne], contenders[randomTwo]];
       setFighters(tempFight);
     }
@@ -71,8 +74,8 @@ const DisplayBattles = ({ match }) => {
       <Contenders {...match} />
       <p className="timer">Time Remaining : {remTime}</p>
       <div className="battles-wrapper">
-        <LeftCont {...fighters[0]} />
-        <RightCont {...fighters[1]} />
+        <LeftCont {...fighters[0]} theme={match} />
+        <LeftCont {...fighters[1]} theme={match} />
       </div>
     </div>
   );

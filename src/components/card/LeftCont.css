@@ -41,7 +41,7 @@
 .card-container {
   width: 40%;
   margin: 1em;
-  background-color: rgb(225, 225, 225);
+  background-color: white;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
