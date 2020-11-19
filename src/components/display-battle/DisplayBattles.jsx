@@ -1,6 +1,7 @@
 // import Axios from "axios";
 import "./DisplayBattles.css";
-import Card from "../card/Card";
+import LeftCont from "../card/LeftCont";
+import RightCont from "../card/RightCont";
 import Contenders from "../Contenders/Contenders";
 
 const info = [
@@ -35,8 +36,8 @@ const DisplayBattles = ({ match }) => {
     <div className="battles-container">
       <Contenders />
       <div className="battles-wrapper">
-        <Card {...info[0]} />
-        <Card {...info[1]} />
+        <LeftCont {...info[0]} />
+        <RightCont {...info[1]} />
       </div>
     </div>
   );
