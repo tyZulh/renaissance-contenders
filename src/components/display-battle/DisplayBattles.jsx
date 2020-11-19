@@ -3,47 +3,53 @@ import "./DisplayBattles.css";
 import LeftCont from "../card/LeftCont";
 import RightCont from "../card/RightCont";
 import Contenders from "../Contenders/Contenders";
-import { useEffect } from "react";
-
-const info = [
-  {
-    name: "Kanye",
-    url:
-      "https://i2-prod.mirror.co.uk/incoming/article6982466.ece/ALTERNATES/s615b/Kanye-West.jpg",
-    artist: "Kanye",
-    nbrVote: "0",
-    style: "music",
-    nationality: "USA",
-    comment: "good vibes",
-  },
-  {
-    name: "Booba",
-    url: "http://antiquipop.hypotheses.org/files/2018/01/Booba-Trone-3.jpg",
-    artist: "Booba",
-    nbrVote: "0",
-    style: "music",
-    nationality: "USA",
-    comment: "good vibes",
-  },
-];
+import { useEffect, useState } from "react";
 
 const DisplayBattles = ({ match }) => {
+  const [contenders, setContenders] = useState([]);
+  const [fighters, setFighters] = useState([{}, {}]);
+  const [remTime, setRemTime] = useState(20);
 
-  const url = "http://9e420d11d0ce.ngrok.io/painting/";
-
-  useEffect(() => {
-    console.log('plop')
+  const fetchContender = async () => {
+    const theme = match.params.style;
+    const url = `http://9e420d11d0ce.ngrok.io/${theme}/all`;
     Axios.get(url)
       .then((res) => res.data)
-      .then((data) => console.log(data));
+      .then((data) => {
+        console.log(data)
+        setContenders(data);
+      });
+  };
+
+  useEffect(() => {
+    fetchContender().then(() => {
+      const random = [];
+      for (let index = 0; index < 2; index++) {
+        random.push(Math.floor(Math.random() * contenders.length));
+      }
+      const tempFight = [contenders[random[0]], contenders[random[1]]];
+      setFighters(tempFight);
+    });
   }, []);
+
+  useEffect(() => {
+    const rebours = setTimeout(() => {
+      setRemTime(parseInt(remTime) - 1);
+    }, 1000);
+    if (remTime === 0) {
+      clearInterval(rebours)
+      fetchContender();
+      setRemTime(20);
+    }
+  }, [remTime]);
 
   return (
     <div className="battles-container">
       <Contenders />
+      <p>Time Remaining : {remTime}</p>
       <div className="battles-wrapper">
-        <LeftCont {...info[0]} />
-        <RightCont {...info[1]} />
+        <LeftCont {...fighters[0]} />
+        <RightCont {...fighters[1]} />
       </div>
     </div>
   );

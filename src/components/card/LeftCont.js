@@ -4,7 +4,7 @@ import commentlogo from '../assets/comment.png'
 
 
 function LeftCont({ name, url, artist, nbrVote, style, nationality, comment }) {
-    console.log(name)
+   
     return (
         <div className="card-container">
             <div className="card-header">
