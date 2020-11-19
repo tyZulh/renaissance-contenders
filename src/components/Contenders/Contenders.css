@@ -1,12 +1,10 @@
-
-
-.contenders__wrapper {    
-    display: flex;
-    padding: 5px;
-    margin-top: 0;
-    margin-left: 10px;
-    overflow-x: scroll;
-    margin-top: -40px;
+.contenders__wrapper {
+  display: flex;
+  padding: 5px;
+  margin-top: 0;
+  margin-left: 10px;
+  overflow-x: scroll;
+  margin-top: -40px;
 }
 
 .contenders__title {
@@ -17,15 +15,20 @@
   margin-top: 0;
 }
 
+.contenders__title, h3 {
+  background-color: white;
+  padding-right: 0.5em;
+  width: fit-content;
+}
 
 .contenders__hr__top {
   position: absolute;
   width: 100%;
   margin-left: 13%;
   margin-top: 35px;
-
 }
 
 
-
-
+::-webkit-scrollbar{
+  display: none;
+}
