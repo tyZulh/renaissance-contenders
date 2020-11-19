@@ -1,8 +1,9 @@
-// import Axios from "axios";
+import Axios from "axios";
 import "./DisplayBattles.css";
 import LeftCont from "../card/LeftCont";
 import RightCont from "../card/RightCont";
 import Contenders from "../Contenders/Contenders";
+import { useEffect } from "react";
 
 const info = [
   {
@@ -27,10 +28,15 @@ const info = [
 ];
 
 const DisplayBattles = ({ match }) => {
-  //   const url = "";
-  //   Axios.get(url)
-  //     .then((res) => res.data)
-  //     .then((data) => console.log(data));
+
+  const url = "http://9e420d11d0ce.ngrok.io/painting/";
+
+  useEffect(() => {
+    console.log('plop')
+    Axios.get(url)
+      .then((res) => res.data)
+      .then((data) => console.log(data));
+  }, []);
 
   return (
     <div className="battles-container">
