@@ -36,8 +36,8 @@ const DisplayBattles = ({ match }) => {
     <div className="battles-container">
       <Contenders />
       <div className="battles-wrapper">
-        <LeftCont {...info[0]} />
-        <RightCont {...info[1]} />
+        <LeftCont {...info[0]} theme={match} />
+        <RightCont {...info[1]} theme={match} />
       </div>
     </div>
   );

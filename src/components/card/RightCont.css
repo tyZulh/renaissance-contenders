@@ -6,6 +6,10 @@
   align-items: center;
 }
 
+.card-title {
+  margin: 10px;
+}
+
 .card-artist {
   width: 4em;
   height: 4em;
@@ -27,11 +31,11 @@
 }
 
 .logo {
-  margin:  1em;
+  margin: 1em;
 }
 
 .card-container img {
-  max-width: 100%;  
+  max-width: 100%;
   max-height: 25em;
   object-fit: contain;
 }

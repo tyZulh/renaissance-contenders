@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./Navigation.css";
 
 const Navigation = () => {
-  const menu = ["Philosophie", "Musique", "Tableaux", "Mode"];
+  const menu = ["philosopher", "music", "painting", "fashion"];
 
   return (
     <nav>
