@@ -9,10 +9,10 @@ function LeftCont({ name, url, artist, nbrVote, style, nationality, comment }) {
         <div className="card-container">
             <div className="right-card-header">
                 <img className="card-artist" alt="artist" src={url} />
-                <h1 className="card-title"> {name} </h1>
+                <h4 className="card-title"> {name} </h4>
             </div>
             <div className="card-work">
-                <img alt="card player" src={url} />
+                <img className='mini-img-right' alt="card player" src={url} />
             </div>
             <div className="right-user-interaction">
                 <img className="like logo" alt="like" src={like} />
