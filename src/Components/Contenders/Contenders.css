@@ -1,0 +1,14 @@
+.contenders__wrapper {    
+    display: flex;
+    padding: 5px;
+    margin-left: 10px;
+    overflow-x: scroll;
+}
+
+.contenders__title {
+  margin-left: 10px;
+}
+
+
+
+
