@@ -67,7 +67,7 @@ const DisplayBattles = ({ match }) => {
 
   return (
     <div className="battles-container">
-      <Contenders />
+      <Contenders {...match} />
       <p className="timer">Time Remaining : {remTime}</p>
       <div className="battles-wrapper">
         <LeftCont {...fighters[0]} />
