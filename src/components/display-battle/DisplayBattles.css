@@ -1,16 +1,10 @@
-.contender {
-    background-color: yellow;
+.battles-wrapper {
+  display: flex;
+
+  justify-content: space-between;
+  height: max-content;
 }
 
-
-.battles-wrapper{
-    display: flex;
-    background-color: blue;
-    justify-content: space-between;
-    height: max-content;
-}
-
-.battles-container{
-    background-color: yellowgreen;
-    height: 100%;
+.battles-container {
+  height: 100%;
 }
