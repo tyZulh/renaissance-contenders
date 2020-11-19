@@ -1,12 +1,10 @@
-.card {
-    width: 500px;
-    height: 500px;
-    background-color: beige;
+.card {    
+    background-color: grey;
 }
 
 .card {
-    width: 40%;
-    height: 50%;
+    width: 100%;
+    height : auto;
     display: flex;
     flex-direction: column;
 }
@@ -15,16 +13,23 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
+    background-color : grey;
 }
 
 .title {
-    width: 100%;
     background-color: grey;
 }
 
 .card-artist {
-    width: 10%;
-    height:60%
+    width: 4em;
+    height : 4em;
+    margin: 15px;
+    border-radius: 50%;
+}
+
+.card-work {
+    margin: 15px 0;
+
 }
 
 .user-interaction {
@@ -34,5 +39,5 @@
 }
 
 .logo {
-    margin : 0 1em;
+    margin: 0 1em;
 }

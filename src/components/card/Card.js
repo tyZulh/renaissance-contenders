@@ -3,7 +3,6 @@ import like from '../assets/like.png'
 import commentlogo from '../assets/comment.png'
 
 
-
 function Card({name, url, artist, nbrVote, style, nationality, comment}) {
     console.log(name)
     return (
