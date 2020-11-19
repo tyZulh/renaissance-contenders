@@ -1,0 +1,17 @@
+.header__container {
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+#first__title {
+  margin: 0;
+  padding-left: 15px;
+}
+
+#img__title {
+  width: 60px;
+  height: auto;
+  vertical-align: -8px;
+  padding-left: 20px;
+}

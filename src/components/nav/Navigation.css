@@ -1,7 +1,7 @@
 nav {
   position: fixed;
   bottom: 0;
-  background-color: red;
+  background-color: white;
   width: 100%;
 }
 
@@ -18,4 +18,9 @@ ul {
 
 li {
   list-style: none;
+  text-transform: uppercase;
+}
+
+li:hover {
+  color: darkviolet;
 }

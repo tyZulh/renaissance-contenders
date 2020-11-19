@@ -7,7 +7,6 @@ const Navigation = () => {
   return (
     <nav>
       <ul>
-        <h1>FUTUR&back</h1>
         {menu.map((x) => {
           return (
             <Link to={x} key={x}>
