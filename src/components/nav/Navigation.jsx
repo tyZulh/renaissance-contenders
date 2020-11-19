@@ -7,6 +7,7 @@ const Navigation = () => {
   return (
     <nav>
       <ul>
+        
         {menu.map((x) => {
           return (
             <Link to={x} key={x}>

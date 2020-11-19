@@ -51,8 +51,8 @@ const DisplayBattles = ({ match }) => {
       clearInterval(rebours);
       setRemTime(10);
 
-      const randomOne = Math.floor(Math.random() * contenders.length - 1);
-      let randomTwo = Math.floor(Math.random() * contenders.length - 1);
+      const randomOne = Math.floor(Math.random() * Math.abs(contenders.length - 1));
+      let randomTwo = Math.floor(Math.random() * Math.abs(contenders.length - 1));
       if (randomOne === randomTwo) {
         randomTwo = contenders.length - 1;
       }
