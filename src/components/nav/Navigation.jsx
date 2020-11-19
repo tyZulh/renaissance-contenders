@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Header from "../header/Header";
 import "./Navigation.css";
 
 const Navigation = () => {
@@ -7,7 +8,6 @@ const Navigation = () => {
   return (
     <nav>
       <ul>
-        
         {menu.map((x) => {
           return (
             <Link to={x} key={x}>
@@ -15,6 +15,7 @@ const Navigation = () => {
             </Link>
           );
         })}
+      <Header />
       </ul>
     </nav>
   );

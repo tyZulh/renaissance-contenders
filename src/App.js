@@ -12,7 +12,6 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
       <Navigation />
       <Switch>
         <Route path="/:style" component={DisplayBattles} />
