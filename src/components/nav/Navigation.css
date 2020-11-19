@@ -3,6 +3,8 @@ nav {
   bottom: 0;
   background-color: white;
   width: 100%;
+  border-top: 1px solid;
+  border-color: darkgrey;
 }
 
 a {
