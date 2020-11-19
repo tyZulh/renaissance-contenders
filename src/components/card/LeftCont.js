@@ -8,7 +8,7 @@ function LeftCont({ name, url, artist, nbrVote, style, nationality, comment }) {
     return (
         <div className="card-container">
             <div className="card-header">
-                <h1 className="card-title"> {name} </h1>
+                <h4 className="card-title"> {name} </h4>
                 <img className="card-artist" alt="artist" src={url} />
             </div>
             <div className="card-work">
