@@ -8,3 +8,7 @@
 .battles-container {
   height: 100%;
 }
+
+.timer {
+  padding-left: 15px;
+}
