@@ -4,7 +4,6 @@ import LeftCont from "../card/LeftCont";
 import RightCont from "../card/RightCont";
 import Contenders from "../Contenders/Contenders";
 import { useEffect, useState } from "react";
-import arrowLogo from '../assets/arrowLogo.png'
 
 const DisplayBattles = ({ match }) => {
   const [contenders, setContenders] = useState([]);
@@ -17,29 +16,32 @@ const DisplayBattles = ({ match }) => {
     Axios.get(url)
       .then((res) => res.data)
       .then((data) => {
-        // console.log(data)
         setContenders(data);
       });
   };
 
-  useEffect(() => {
-    setRemTime(10);
-    fetchContender();
+  const chooseFighter = () => {
     const random = [];
     for (let index = 0; index < 2; index++) {
       random.push(Math.floor(Math.random() * contenders.length));
     }
     const tempFight = [contenders[random[0]], contenders[random[1]]];
     setFighters(tempFight);
+    setRemTime(10);
+  };
+
+  useEffect(() => {
+    fetchContender();
+    console.log(fighters);
   }, [match]);
 
-  useEffect(() => {   
-    // console.log('plop') 
-    setRemTime(10);
-    fetchContender();    
-    const tempFight = [contenders[0], contenders[1]];
-    setFighters(tempFight);
+  useEffect(() => {
+    fetchContender();
   }, []);
+
+  useEffect(() => {
+    chooseFighter();
+  }, [contenders]);
 
   useEffect(() => {
     const rebours = setTimeout(() => {
@@ -48,20 +50,7 @@ const DisplayBattles = ({ match }) => {
 
     if (remTime === 0) {
       clearInterval(rebours);
-      setRemTime(10);
-
-      const randomOne = Math.floor(
-        Math.random() * Math.abs(contenders.length - 1)
-      );
-      let randomTwo = Math.floor(
-        Math.random() * Math.abs(contenders.length - 1)
-      );
-      if (randomOne === randomTwo) {
-        randomTwo = contenders.length - 1;
-      }
-
-      const tempFight = [contenders[randomOne], contenders[randomTwo]];
-      setFighters(tempFight);
+      chooseFighter();
     }
     return () => {
       clearInterval(rebours);
@@ -71,13 +60,16 @@ const DisplayBattles = ({ match }) => {
   return (
     <div className="battles-container">
       <Contenders {...match} />
-      <p className="timer">Time Remaining : {remTime}</p>
+      {fighters.every((value) => value !== undefined) && (
+        <p className="timer">Time Remaining : {remTime}</p>
+      )}
       <div className="battles-wrapper">
-        <LeftCont {...fighters[0]} theme={match} />
-        <div className="versus">
-          <img className='icon-central' src={arrowLogo} alt="vs logo" />
-        </div>
-        <LeftCont {...fighters[1]} theme={match} />
+        {fighters.every((value) => value !== undefined) && (
+          <div>
+            <LeftCont {...fighters[0]} theme={match} />
+            <LeftCont {...fighters[1]} theme={match} />
+          </div>
+        )}
       </div>
     </div>
   );
