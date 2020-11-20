@@ -22,7 +22,7 @@ function LeftCont(props) {
         axios({
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, 
-                    url: `http://localhost:8000/${theme}/edit/${id}`,
+            url: `http://3cbbd8157824.ngrok.io/${theme}/edit/${id}`,
                     data: qs.stringify({
                             nb_vote: count
                     })
@@ -37,8 +37,8 @@ function LeftCont(props) {
 
     return (
         <div className="card-container">
-            <div className="card-header">
-                {props.theme.params.style === 'philosopher' ? <h1 className="card-title"> {props.name}</h1> : <h1 className="card-title"> {props.artist} </h1>}
+            <div className="card-header-left">
+                {props.theme.params.style === 'philosopher' ? <h4 className="card-title"> {props.name}</h4> : <h1 className="card-title"> {props.artist} </h1>}
                 <img className="card-artist" alt="artist" src={props.url} />
             </div>
 
@@ -50,9 +50,8 @@ function LeftCont(props) {
             </div>
 
 
-            <div className="user-interaction">
-                <form>
-                    {}
+            <div className="user-interaction-left">
+                <img className="comment logo" alt="comment" src={commentlogo} />
                     <img onClick={changeCount}
                     className="like logo"
                     alt="like" 
@@ -60,10 +59,9 @@ function LeftCont(props) {
                     id={props.id}
                      />
 
-                {count}
-                </form>
+                        {count}
+                
 
-                <img className="comment logo" alt="comment" src={commentlogo} />
             </div>
 
         </div>

@@ -8,22 +8,32 @@
   height: 100%;
 }
 
-.timer {
-  padding-left: 15px;
-  margin-left: 48%;
-  font-size: 65px;
-  font-weight: bold;
+.timer-container {
+  display: flex;
+  justify-content: center;
 }
 
-.versus {
-  display: flex;
-  width: 25%;
+#timer {
+  text-align: center;
+  width: 2em;
+  height: 2em;
+  font-size: 65px;
+  font-weight: bold;
+  position: absolute;
+  margin-top: 2em;
+ 
 }
+
+
 
 .icon-central {
   width: 30%;
   height: 20%;
   margin-right: auto;
-  margin-left:auto;
-  margin-top: 40%;
+  margin-left: auto;
+}
+
+.logo-middle {
+  color: #851D14;
+  font-size: 12em;
 }

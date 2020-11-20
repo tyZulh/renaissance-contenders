@@ -11,8 +11,9 @@
   position: relative;
   padding: 5px;
   margin-left: 10px;
-  font-size: 3em;
+  font-size: 2.5em;
   margin-top: 0;
+  margin-bottom: 0em;
   text-transform: capitalize;
 }
 
@@ -24,10 +25,10 @@
 
 .contenders__hr__top {
   position: absolute;
-  width: 87%;
-  margin-left: 13%;
+  width: 100%;
+  margin-left: 10%;
   margin-top: 35px;
-  border: 1px solid #851D14;
+
 }
 
 ::-webkit-scrollbar{

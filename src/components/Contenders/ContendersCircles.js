@@ -14,7 +14,7 @@ const ContendersCircles = (props) => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const url = `http://localhost:8000/${theme}/all`
+            const url = `http://3cbbd8157824.ngrok.io//${theme}/all`
             const request = await axios.get(url)
 
             const arr = [...request.data]
