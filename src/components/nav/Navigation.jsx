@@ -11,7 +11,7 @@ const Navigation = () => {
         {menu.map((x) => {
           return (
             <Link to={x} key={x}>
-              <li>{x}</li>
+              <li><h3 className='nav-items'>{x}</h3></li>
             </Link>
           );
         })}

@@ -26,3 +26,11 @@ li {
 li:hover {
   color: darkviolet;
 }
+
+.nav-items {
+  transition: 0.2s ease-out;
+}
+
+.nav-items:hover {
+  transform: scale(1.2)
+}
