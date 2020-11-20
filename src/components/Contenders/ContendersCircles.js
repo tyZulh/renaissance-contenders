@@ -1,35 +1,36 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import Circle from './Circle'
 import axios from 'axios'
-
+import { IziContext } from '../../App'
 import './ContendersCircles.css'
 
 const ContendersCircles = (props) => {
     const [imageCircle, setImageCircle] = useState([])
-    const [votes, setVotes] = useState()
-
-
+    const chala = useContext(IziContext);
+    const jpsr = chala[0]
     const theme = props.info.params.style
 
+    const fetchData = async () => {
+        const url = `http://3cbbd8157824.ngrok.io/${theme}/all`
+        const request = await axios.get(url)
+
+        const arr = [...request.data]
+        const finalArr = arr.sort((a, b) => {
+            return a.nb_vote - b.nb_vote
+        }).reverse()
+        setImageCircle(finalArr)
+    }
 
     useEffect(() => {
-        const fetchData = async () => {
-            const url = `http://3cbbd8157824.ngrok.io/${theme}/all`
-            const request = await axios.get(url)
-
-            const arr = [...request.data]
-            const finalArr = arr.sort((a, b) => {
-                return a.nb_vote - b.nb_vote
-            }).reverse()
-
-
-            console.log('AAAAAAAA4', finalArr)
-            setVotes(request.data.nb_vote)
-            setImageCircle(finalArr)
-
-        }
-        fetchData()
+        fetchData();      
     }, [theme])
+
+    useEffect(()=> {
+       fetchData()
+    },[jpsr])
+
+
+
 
 
     return (

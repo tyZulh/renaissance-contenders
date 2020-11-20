@@ -1,42 +1,31 @@
 import './LeftCont.css'
-import like from '../assets/like.png'
 import commentlogo from '../assets/comment.png'
-import { useEffect, useState } from 'react'
-import qs from 'qs'
+import { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
+import { IziContext } from '../../App'
+
 
 
 function LeftCont(props) {
     const [count, setCount] = useState(parseInt(props.nb_vote))
-
+    const conto = useContext(IziContext)
 
     useEffect(() => {
         setCount(parseInt(props.nb_vote))
     }, [props.nb_vote])
 
     const changeCount = (e) => {
-        setCount(count + 1) 
-        const theme = props.theme
+        setCount(count + 1)
+        conto[1](!conto[0])
+        const theme = props.theme.params.style
         const id = e.target.id
-
-        axios({
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, 
-                    url: `http://localhost:8000/${theme}/edit/${id}`,
-                    data: qs.stringify({
-                            nb_vote: count
-                    })
-        })
+        axios.post(`http://3cbbd8157824.ngrok.io/${theme}/edit/${id}`).then((res) => setCount(res.data))
     }
-        // axios.post(`http://1f5403262dc5.ngrok.io/${theme}/edit/${id}`, qs.stringify({
-        //     nb_vote: count
-        // }) )
-    //     .then(res => console.log('dzfksfjkshdlfjkzhdfjlkdf', res ))
-    // }
+
 
 
     return (
-        <div className="card-container">
+        <div className="card-container" style={{ animation: '1s popOn forwards' }}>
             <div className="card-header">
                 {props.theme.params.style === 'philosopher' ? <h1 className="card-title"> {props.name}</h1> : <h1 className="card-title"> {props.artist} </h1>}
                 <img className="card-artist" alt="artist" src={props.url} />
@@ -46,21 +35,21 @@ function LeftCont(props) {
 
 
             <div className="card-work">
-                {props.theme.params.style === 'philosopher' ? <h3 className="text-quote"> <img className="quote" src="https://i.postimg.cc/yxkQqYHD/left-quote.png"/> {props.artist}</h3> : <img className="card-player" alt="artist" src={props.url} />}
+                {props.theme.params.style === 'philosopher' ? <h3 className="text-quote"> <img className="quote" src="https://i.postimg.cc/yxkQqYHD/left-quote.png" /> {props.artist}</h3> : <img className="card-player" alt="artist" src={props.url} />}
             </div>
 
 
             <div className="user-interaction">
                 <form>
-                    {}
+                    { }
                     <img onClick={changeCount}
-                    className="like logo"
-                    alt="like" 
-                    src="https://i.postimg.cc/X7fKrbqt/Ei-heart.png"
-                    id={props.id}
-                     />
+                        className="like logo"
+                        alt="like"
+                        src="https://i.postimg.cc/X7fKrbqt/Ei-heart.png"
+                        id={props.id}
+                    />
 
-                {count}
+                    {count}
                 </form>
 
                 <img className="comment logo" alt="comment" src={commentlogo} />
