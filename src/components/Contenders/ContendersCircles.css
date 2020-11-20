@@ -1,4 +1,6 @@
 
 .contendersCirclesContainer {
     display: flex;
+    overflow-x: scroll;
+ 
 }

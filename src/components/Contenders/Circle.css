@@ -1,20 +1,18 @@
-.contenders__wrapper { 
-    display: flex;   
-    padding: 5px;
-    margin-left: 10px;
-    overflow-x: scroll;
-    margin-bottom: 20px;
-    margin-top: -30px;
+.sansNom {
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .contenders__circle {
+
     display: flex;
     height: 100px;
     width: 100px;
     margin-right: 40px;
     border-radius: 50%;
     transition: 0.2s;
-    position: relative;
+    
   }
 
 .contenders__circle:hover {
@@ -30,7 +28,7 @@
     border-radius: 10%;
     font-weight: thick;
     position: absolute;
-    margin-left: 80px;
-    margin-top: -10px;
+    top: 0px;
+    right: 0px;
     user-select: none;
 }

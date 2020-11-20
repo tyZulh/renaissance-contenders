@@ -7,7 +7,7 @@ const Header = () => {
     <div className="header__container">
       <header>
         <h1 id="first__title">
-          FUTUR&back <img id="img__title" src={imgTitle} alt="Logo title" />
+          FUTUR&back 
         </h1>
       </header>
     </div>

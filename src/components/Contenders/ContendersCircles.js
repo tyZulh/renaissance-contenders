@@ -17,9 +17,17 @@ const ContendersCircles = (props) => {
             const url = `http://1f5403262dc5.ngrok.io/${theme}/all`
             const request = await axios.get(url)
 
+            const arr = [...request.data]
+            const finalArr= arr.sort((a, b) => {
+                return a.nb_vote - b.nb_vote
+                
 
+            }).reverse()
+
+    
+            console.log('AAAAAAAA4', finalArr)
             setVotes(request.data.nb_vote)
-            setImageCircle(request.data)
+            setImageCircle(finalArr)
 
         }
         fetchData()
@@ -28,7 +36,10 @@ const ContendersCircles = (props) => {
    
     return (
         <div className='contendersCirclesContainer'>
-            {imageCircle.map((image, i) => (
+            {imageCircle
+            .sort()
+            .reverse()
+            .map((image, i) => (
                 <Circle key={i} {... image} />
             ))}
             

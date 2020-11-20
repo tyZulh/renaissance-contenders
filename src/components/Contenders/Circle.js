@@ -14,7 +14,7 @@ const Circle = (props) => {
     }
 
     return (
-        <div className='contenders__wrapper'>
+        <div className='sansNom'>
             
                         <img
                             className='contenders__circle'

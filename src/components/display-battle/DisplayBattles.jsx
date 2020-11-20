@@ -16,7 +16,7 @@ const DisplayBattles = ({ match }) => {
     Axios.get(url)
       .then((res) => res.data)
       .then((data) => {
-        console.log(data)
+        // console.log(data)
         setContenders(data);
       });
   };
@@ -33,7 +33,7 @@ const DisplayBattles = ({ match }) => {
   }, [match]);
 
   useEffect(() => {   
-    console.log('plop') 
+    // console.log('plop') 
     setRemTime(10);
     fetchContender();    
     const tempFight = [contenders[0], contenders[1]];
