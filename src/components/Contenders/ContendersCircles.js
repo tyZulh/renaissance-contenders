@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Circle from './Circle'
 import axios from 'axios'
 
 import './ContendersCircles.css'
@@ -6,7 +7,7 @@ import './ContendersCircles.css'
 const ContendersCircles = (props) => {
     const [imageCircle, setImageCircle] = useState([])
     const [votes, setVotes] = useState()
-    const [hover, setHover] = useState(false)
+    
 
     const theme = props.info.params.style
 
@@ -24,33 +25,13 @@ const ContendersCircles = (props) => {
         fetchData()
     }, [theme])
 
-    const handleMouseEnter = () => {
-        setHover(!hover)
-    }
-
-    const handleMouseOut = () => {
-        setHover(!hover)
-    }
-
+   
     return (
-        <div className='contenders__wrapper'>
-            {
-                imageCircle
-                    .map((image, i) => (
-                        <div key={i}>
-
-                            <img
-                                className='contenders__circle'
-                                key={i}
-                                src={image.url}
-                                alt={image.name}
-                                onMouseEnter={handleMouseEnter}
-                                onMouseOut={handleMouseOut}
-                            />
-
-                        </div>
-                    ))
-            }
+        <div className='contendersCirclesContainer'>
+            {imageCircle.map((image, i) => (
+                <Circle key={i} {... image} />
+            ))}
+            
         </div>
     )
 }
