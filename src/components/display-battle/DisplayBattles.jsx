@@ -40,6 +40,7 @@ const DisplayBattles = ({ match }) => {
     }
     const tempFight = [contenders[random[0]], contenders[random[1]]];
     setFighters(tempFight);
+    
   },[]);
 
   useEffect(() => {
