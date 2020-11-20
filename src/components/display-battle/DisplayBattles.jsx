@@ -4,6 +4,7 @@ import LeftCont from "../card/LeftCont";
 import RightCont from "../card/RightCont";
 import Contenders from "../Contenders/Contenders";
 import { useEffect, useState } from "react";
+import arrowLogo from '../assets/arrowLogo.png'
 
 const DisplayBattles = ({ match }) => {
   const [contenders, setContenders] = useState([]);
@@ -73,6 +74,9 @@ const DisplayBattles = ({ match }) => {
       <p className="timer">Time Remaining : {remTime}</p>
       <div className="battles-wrapper">
         <LeftCont {...fighters[0]} theme={match} />
+        <div className="versus">
+          <img src={arrowLogo} alt="vs logo" />
+        </div>
         <LeftCont {...fighters[1]} theme={match} />
       </div>
     </div>
