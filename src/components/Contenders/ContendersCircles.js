@@ -13,15 +13,12 @@ const ContendersCircles = (props) => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const url = `http://9e420d11d0ce.ngrok.io/${theme}/all`
+            const url = `http://1f5403262dc5.ngrok.io/${theme}/all`
             const request = await axios.get(url)
-            console.log(url)
+
 
             setVotes(request.data.nb_vote)
             setImageCircle(request.data)
-
-            console.log('DATA------------>', request.data)
-            console.log('NB VOTE---------->', request.nb_vote)
 
         }
         fetchData()

@@ -6,9 +6,7 @@ import { useEffect } from 'react'
 
 function LeftCont(props) {
 
-    useEffect(() => {
-        console.log('propssssss', props)
-    }, [])
+   
 
     return (
         <div className="card-container">

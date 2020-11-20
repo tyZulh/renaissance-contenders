@@ -12,10 +12,11 @@ const DisplayBattles = ({ match }) => {
 
   const fetchContender = () => {
     const theme = match.params.style;
-    const url = `http://9e420d11d0ce.ngrok.io/${theme}/all`;
+    const url = `http://1f5403262dc5.ngrok.io/${theme}/all`;
     Axios.get(url)
       .then((res) => res.data)
       .then((data) => {
+        console.log(data)
         setContenders(data);
       });
   };
@@ -31,14 +32,11 @@ const DisplayBattles = ({ match }) => {
     setFighters(tempFight);
   }, [match]);
 
-  useEffect(() => {
+  useEffect(() => {   
+    console.log('plop') 
     setRemTime(10);
-    fetchContender();
-    const random = [];
-    for (let index = 0; index < 2; index++) {
-      random.push(Math.floor(Math.random() * contenders.length));
-    }
-    const tempFight = [contenders[random[0]], contenders[random[1]]];
+    fetchContender();    
+    const tempFight = [contenders[0], contenders[1]];
     setFighters(tempFight);
   }, []);
 
@@ -60,7 +58,7 @@ const DisplayBattles = ({ match }) => {
       if (randomOne === randomTwo) {
         randomTwo = contenders.length - 1;
       }
-      console.log(contenders.length);
+
       const tempFight = [contenders[randomOne], contenders[randomTwo]];
       setFighters(tempFight);
     }
