@@ -75,7 +75,7 @@ const DisplayBattles = ({ match }) => {
       <div className="battles-wrapper">
         <LeftCont {...fighters[0]} theme={match} />
         <div className="versus">
-          <img src={arrowLogo} alt="vs logo" />
+          <img className='icon-central' src={arrowLogo} alt="vs logo" />
         </div>
         <LeftCont {...fighters[1]} theme={match} />
       </div>
