@@ -19,14 +19,14 @@ function LeftCont(props) {
         const theme = props.theme
         const id = e.target.id
 
-        axios({
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, 
-                    url: `http://1f5403262dc5.ngrok.io/${theme}/edit/${id}`,
-                    data: qs.stringify({
-                            nb_vote: count
-                    })
-        })
+        // axios({
+        //         method: 'POST',
+        //         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, 
+        //             url: `http://1f5403262dc5.ngrok.io/${theme}/edit/${id}`,
+        //             data: qs.stringify({
+        //                     nb_vote: count
+        //             })
+        // })
     }
         // axios.post(`http://1f5403262dc5.ngrok.io/${theme}/edit/${id}`, qs.stringify({
         //     nb_vote: count
