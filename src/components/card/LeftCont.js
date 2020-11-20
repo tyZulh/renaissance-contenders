@@ -49,15 +49,13 @@ function LeftCont(props) {
 
 
             <div className="user-interaction">
-                <form>
-                    {}
+            
                     <img onClick={changeCount}
                     className="like logo"
                     alt="like" 
                     src={like}
                     id={props.id}
                      />
-                </form>
 
 
                 <img className="comment logo" alt="logo comment" src={commentlogo} />
