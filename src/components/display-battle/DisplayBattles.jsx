@@ -13,7 +13,7 @@ const DisplayBattles = ({ match }) => {
 
   const fetchContender = () => {
     const theme = match.params.style;
-    const url = `http://1f5403262dc5.ngrok.io/${theme}/all`;
+    const url = `http://localhost:8000/${theme}/all`;
     Axios.get(url)
       .then((res) => res.data)
       .then((data) => {
@@ -71,11 +71,11 @@ const DisplayBattles = ({ match }) => {
   return (
     <div className="battles-container">
       <Contenders {...match} />
-      <p className="timer">Time Remaining : {remTime}</p>
+      <p className="timer">{remTime}'</p>
       <div className="battles-wrapper">
         <LeftCont {...fighters[0]} theme={match} />
         <div className="versus">
-          <img className='icon-central' src={arrowLogo} alt="vs logo" />
+          <img className='icon-central' src="https://i.postimg.cc/KvV8nKWW/logo2.png" alt="vs logo"/>
         </div>
         <LeftCont {...fighters[1]} theme={match} />
       </div>

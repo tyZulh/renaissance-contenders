@@ -7,7 +7,7 @@ const Header = () => {
     <div className="header__container">
       <header>
         <h1 id="first__title">
-          FUTUR&back 
+          CITIZEN<span class ="and__header__container">&</span>court
         </h1>
       </header>
     </div>

@@ -15,14 +15,14 @@ function LeftCont(props) {
     }, [props.nb_vote])
 
     const changeCount = (e) => {
-        setCount(count + 50) 
+        setCount(count + 1) 
         const theme = props.theme
         const id = e.target.id
 
         axios({
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, 
-                    url: `http://1f5403262dc5.ngrok.io/${theme}/edit/${id}`,
+                    url: `http://localhost:8000/${theme}/edit/${id}`,
                     data: qs.stringify({
                             nb_vote: count
                     })
@@ -42,9 +42,11 @@ function LeftCont(props) {
                 <img className="card-artist" alt="artist" src={props.url} />
             </div>
 
+            {props.theme.params.style === 'fashion' && <h4 >By {props.name}</h4>}
+
 
             <div className="card-work">
-                {props.theme.params.style === 'philosopher' ? <p>{props.artist}</p> : <img className="card-player" alt="artist" src={props.url} />}
+                {props.theme.params.style === 'philosopher' ? <h3 className="text-quote"> <img className="quote" src="https://i.postimg.cc/yxkQqYHD/left-quote.png"/> {props.artist}</h3> : <img className="card-player" alt="artist" src={props.url} />}
             </div>
 
 
@@ -54,15 +56,14 @@ function LeftCont(props) {
                     <img onClick={changeCount}
                     className="like logo"
                     alt="like" 
-                    src={like}
+                    src="https://i.postimg.cc/X7fKrbqt/Ei-heart.png"
                     id={props.id}
                      />
+
+                {count}
                 </form>
 
-
-                <img className="comment logo" alt="logo comment" src={commentlogo} />
-                {props.theme.params.style === 'fashion' && <h4>{props.name}</h4>}
-                {count}
+                <img className="comment logo" alt="comment" src={commentlogo} />
             </div>
 
         </div>

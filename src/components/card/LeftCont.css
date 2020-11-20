@@ -22,15 +22,13 @@
 
 .user-interaction {
   display: flex;
-  justify-content: flex-end;
+  justify-content: baseline;
   align-items: flex-end;
-  align-self: flex-start;
+  align-self: center;
   height: 100%;
+  margin-top: 15px;
 }
 
-.logo {
-  margin:  1em;
-}
 
 .card-container img {
   max-width: 100%;  
@@ -52,4 +50,18 @@
 
 .card-title {
   margin-left: 0;
+}
+
+.like {
+  width: 25%;
+}
+
+.quote {
+  width:5%;
+}
+
+.text-quote {
+  margin: 20px;
+  line-height: 30px;
+  padding: 50px;
 }

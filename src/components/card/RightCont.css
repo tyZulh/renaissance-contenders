@@ -29,8 +29,9 @@
   height: 100%;
 }
 
-.logo {
-  margin:  1em;
+.like {
+  margin-top: 5px;
+  width: 20%;
 }
 
 .card-container img {
@@ -42,7 +43,8 @@
 .card-container {
   width: 40%;
   margin: 1em;
-  background-color: rgb(225, 225, 225);
+  background-color: whitesmoke;
+  box-shadow: 0px 2px 9px 0px darkgray;
   border-radius: 10px;
   display: flex;
   flex-direction: column;

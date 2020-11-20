@@ -1,7 +1,6 @@
 .battles-wrapper {
   display: flex;
-
-  justify-content: space-between;
+  justify-content: space-around;
   height: max-content;
 }
 
@@ -11,12 +10,20 @@
 
 .timer {
   padding-left: 15px;
+  margin-left: 48%;
+  font-size: 65px;
+  font-weight: bold;
 }
 
 .versus {
   display: flex;
-  align-items: center;
+  width: 25%;
 }
-.icon-central {
 
+.icon-central {
+  width: 30%;
+  height: 20%;
+  margin-right: auto;
+  margin-left:auto;
+  margin-top: 40%;
 }
