@@ -13,7 +13,7 @@ const DisplayBattles = ({ match }) => {
 
   const fetchContender = () => {
     const theme = match.params.style;
-    const url = `http://localhost:8000/${theme}/all`;
+    const url = `http://3cbbd8157824.ngrok.io/${theme}/all`;
     Axios.get(url)
       .then((res) => res.data)
       .then((data) => {
