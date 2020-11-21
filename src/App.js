@@ -15,6 +15,7 @@ function App() {
       <Navigation />
       <Switch>
         <IziContext.Provider value={[plop,setPlop]}>
+          
           <Route path="/:style" component={DisplayBattles} />
         </IziContext.Provider >
       </Switch>

@@ -33,7 +33,7 @@
 }
 
 .card-container {
-  margin: 1em;
+  margin: 1em 10%;
   background-color: white;
   border-radius: 10px;
   display: flex;

@@ -11,7 +11,7 @@ const ContendersCircles = (props) => {
     const theme = props.info.params.style
 
     const fetchData = async () => {
-        const url = `http://3cbbd8157824.ngrok.io/${theme}/all`
+        const url = `http://localhost:8000/${theme}/all`
         const request = await axios.get(url)
 
         const arr = [...request.data]
@@ -26,7 +26,8 @@ const ContendersCircles = (props) => {
     }, [theme])
 
     useEffect(()=> {
-       fetchData()
+        console.log(jpsr)
+       fetchData();
     },[jpsr])
 
 

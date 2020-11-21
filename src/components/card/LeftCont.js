@@ -2,13 +2,13 @@ import './LeftCont.css'
 import commentlogo from '../assets/comment.png'
 import { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
-import { IziContext } from '../../App'
+
 
 
 
 function LeftCont(props) {
     const [count, setCount] = useState(parseInt(props.nb_vote))
-    const conto = useContext(IziContext)
+    
 
     useEffect(() => {
         setCount(parseInt(props.nb_vote))
@@ -16,10 +16,10 @@ function LeftCont(props) {
 
     const changeCount = (e) => {
         setCount(count + 1)
-        conto[1](!conto[0])
+       
         const theme = props.theme.params.style
         const id = e.target.id
-        axios.post(`http://3cbbd8157824.ngrok.io/${theme}/edit/${id}`).then((res) => setCount(res.data))
+        axios.post(`http://localhost:8000/${theme}/edit/${id}`).then((res) => setCount(res.data))
     }
 
 

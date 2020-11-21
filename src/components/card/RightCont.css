@@ -6,7 +6,6 @@
   align-items: center;
   margin-right: 15px;
 }
-
 .card-artist {
   width: 4em;
   height: 4em;
@@ -15,23 +14,24 @@
   margin-left: 10px;
   margin-right: 1em;
 }
-
 .card-work {
   display: flex;
   justify-content: center;
   width: 100%;
 }
-
 .user-interaction-right {
   display: flex;
   justify-content: space-around;
   margin: 15px auto;
   align-items: center;
 }
-
 .like {
   margin-top: 5px;
   width: 20%;
+}
+
+.like:active {
+  transform: scale(1);
 }
 
 .card-container img {
@@ -39,7 +39,6 @@
   max-height: 25em;
   object-fit: contain;
 }
-
 .card-container {
   width: 40%;
   margin: 1em;
@@ -52,8 +51,7 @@
   align-items: center;
   padding: 1em 0 1em 0;
 }
-
 .card-title-right {
   font-size: 18px;
-    margin-top: 6px;
+    margin-top: 4px;
   }

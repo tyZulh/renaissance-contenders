@@ -3,17 +3,19 @@ import "./DisplayBattles.css";
 import LeftCont from "../card/LeftCont";
 import RightCont from "../card/RightCont";
 import Contenders from "../Contenders/Contenders";
-import { useEffect, useState } from "react";
+import { useEffect, useState,useContext } from "react";
 import arrowLogo from '../assets/arrowLogo.png'
+import { IziContext } from '../../App'
 
 const DisplayBattles = ({ match }) => {
   const [contenders, setContenders] = useState([]);
   const [fighters, setFighters] = useState([{}, {}]);
   const [remTime, setRemTime] = useState(10);
+  const conto = useContext(IziContext)
 
   const fetchContender = () => {
     const theme = match.params.style;
-    const url = `http://3cbbd8157824.ngrok.io//${theme}/all`;
+    const url = `http://localhost:8000//${theme}/all`;
     Axios.get(url)
       .then((res) => res.data)
       .then((data) => {
@@ -52,6 +54,7 @@ const DisplayBattles = ({ match }) => {
     if (remTime === 0) {
       clearInterval(rebours);
       chooseFighter();
+      conto[1](!conto[0])
     }
     return () => {
       clearInterval(rebours);
@@ -69,7 +72,7 @@ const DisplayBattles = ({ match }) => {
         <div className="versus">
           <p className="logo-middle">&</p>
         </div>
-        <RightCont {...fighters[1]} theme={match} />
+        {fighters.every(x => x !== undefined) &&  <RightCont {...fighters[1]} theme={match} />}
       </div>
     </div>
   );

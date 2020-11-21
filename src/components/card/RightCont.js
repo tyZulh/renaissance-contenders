@@ -22,7 +22,7 @@ function RightCont(props) {
         axios({
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            url: `http://3cbbd8157824.ngrok.io/${theme}/edit/${id}`,
+            url: `http://localhost:8000/${theme}/edit/${id}`,
             data: qs.stringify({
                 nb_vote: count
             })

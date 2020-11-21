@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './Circle.css'
 
+
 const Circle = (props) => {
 
     const [hover, setHover] = useState(false)
@@ -25,7 +26,7 @@ const Circle = (props) => {
                             onMouseOver={handleMouseOver}
                             onMouseOut={handleMouseOut}
                         />
-                        {hover && <p className='score_onHover'>{props.nb_vote}</p>} 
+                        {hover && <p className='score_onHover'>{props.nb_vote}<img src="https://i.postimg.cc/Pxy2cvvb/Emoji-u2665.png" style={{width:'20px',marginLeft:'10px'}}/></p>} 
     
         </div>
     )
