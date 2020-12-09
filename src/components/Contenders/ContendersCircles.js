@@ -4,6 +4,8 @@ import axios from 'axios'
 import { IziContext } from '../../App'
 import './ContendersCircles.css'
 
+const BASE_PATH = process.env.REACT_APP_API_URL
+
 const ContendersCircles = (props) => {
     const [imageCircle, setImageCircle] = useState([])
     const chala = useContext(IziContext);
@@ -11,7 +13,7 @@ const ContendersCircles = (props) => {
     const theme = props.info.params.style
 
     const fetchData = async () => {
-        const url = `http://localhost:8000/${theme}/all`
+        const url = `${BASE_PATH}/${theme}/all`
         const request = await axios.get(url)
 
         const arr = [...request.data]

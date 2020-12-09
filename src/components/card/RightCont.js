@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import qs from 'qs'
 import axios from 'axios'
 
+const BASE_PATH = process.env.REACT_APP_API_URL
 
 function RightCont(props) {
     const [count, setCount] = useState(parseInt(props.nb_vote))
@@ -22,7 +23,7 @@ function RightCont(props) {
         axios({
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            url: `http://localhost:8000/${theme}/edit/${id}`,
+            url: `${BASE_PATH}/${theme}/edit/${id}`,
             data: qs.stringify({
                 nb_vote: count
             })
