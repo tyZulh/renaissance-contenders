@@ -5,6 +5,7 @@ import { IziContext } from '../../App'
 import './ContendersCircles.css'
 
 const BASE_PATH = process.env.REACT_APP_API_URL
+console.log(BASE_PATH)
 
 const ContendersCircles = (props) => {
     const [imageCircle, setImageCircle] = useState([])

@@ -6,6 +6,7 @@ import qs from 'qs'
 import axios from 'axios'
 
 const BASE_PATH = process.env.REACT_APP_API_URL
+console.log(BASE_PATH)
 
 function RightCont(props) {
     const [count, setCount] = useState(parseInt(props.nb_vote))
