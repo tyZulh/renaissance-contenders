@@ -14,13 +14,14 @@ const ContendersCircles = (props) => {
 
     useEffect(() => {
         const fetchData = async () => {
+            console.log('fetchData')
             const url = `https://citizen-court-api.captain.citizen-court.tech/${theme}/all`
             const request = await axios.get(url)
     
             const arr = [...request.data]
             const finalArr = arr.sort((a, b) => {
-                return a.nb_vote - b.nb_vote
-            }).reverse()
+                return b.nb_vote - a.nb_vote
+            })
             setImageCircle(finalArr)
         }
 
