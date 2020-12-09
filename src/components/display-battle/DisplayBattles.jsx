@@ -15,7 +15,7 @@ const DisplayBattles = ({ match }) => {
 
   const fetchContender = () => {
     const theme = match.params.style;
-    const url = `http://citizen-court-api.captain.citizen-court.tech/${theme}/all`;
+    const url = `https://citizen-court-api.captain.citizen-court.tech/${theme}/all`;
     Axios.get(url)
       .then((res) => res.data)
       .then((data) => {
