@@ -1,5 +1,4 @@
 import './Header.css'
-import imgTitle from "../assets/retour-vers-le-futur.png"
 
 const Header = () => {
 
@@ -7,7 +6,7 @@ const Header = () => {
     <div className="header__container">
       <header>
         <h1 id="first__title">
-          CITIZEN<span class ="and__header__container">&</span>court
+          CITIZEN<span className ="and__header__container">&</span>court
         </h1>
       </header>
     </div>
