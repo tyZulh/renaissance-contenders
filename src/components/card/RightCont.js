@@ -20,12 +20,11 @@ function RightCont(props) {
         setCount(count + 1)
         const theme = props.theme
         const id = e.target.id
-        console.log(BASE_PATH)
 
         axios({
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            url: `${BASE_PATH}/${theme}/edit/${id}`,
+            url: `https://citizen-court-api.captain.citizen-court.tech/${theme}/edit/${id}`,
             data: qs.stringify({
                 nb_vote: count
             })

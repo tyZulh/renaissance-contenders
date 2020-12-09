@@ -4,20 +4,20 @@ import axios from 'axios'
 import { IziContext } from '../../App'
 import './ContendersCircles.css'
 
-const BASE_PATH = process.env.REACT_APP_API_URL
+
 
 const ContendersCircles = (props) => {
     const [imageCircle, setImageCircle] = useState([])
     const chala = useContext(IziContext);
     const jpsr = chala[0]
     const theme = props.info.params.style
-    console.log(BASE_PATH)
+
 
 
 
     useEffect(() => {
         const fetchData = async () => {
-            const url = `${BASE_PATH}/${theme}/all`
+            const url = `https://citizen-court-api.captain.citizen-court.tech/${theme}/all`
             const request = await axios.get(url)
     
             const arr = [...request.data]
