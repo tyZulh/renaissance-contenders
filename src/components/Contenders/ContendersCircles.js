@@ -46,8 +46,8 @@ const ContendersCircles = (props) => {
     return (
         <div className='contendersCirclesContainer'>
             {imageCircle
-                .sort()
-                .reverse()
+                // .sort()
+                // .reverse()
                 .map((image, i) => (
                     <Circle key={i} {...image} />
                 ))}
