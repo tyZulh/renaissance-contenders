@@ -5,7 +5,6 @@ import axios from 'axios'
 
 
 const BASE_PATH = process.env.REACT_APP_API_URL
-console.log(BASE_PATH)
 
 function LeftCont(props) {
     const [count, setCount] = useState(parseInt(props.nb_vote))
@@ -20,6 +19,7 @@ function LeftCont(props) {
        
         const theme = props.theme.params.style
         const id = e.target.id
+        console.log(BASE_PATH)
         axios.post(`${BASE_PATH}/${theme}/edit/${id}`).then((res) => setCount(res.data))
     }
 

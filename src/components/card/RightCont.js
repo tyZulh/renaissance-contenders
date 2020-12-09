@@ -6,7 +6,7 @@ import qs from 'qs'
 import axios from 'axios'
 
 const BASE_PATH = process.env.REACT_APP_API_URL
-console.log(BASE_PATH)
+
 
 function RightCont(props) {
     const [count, setCount] = useState(parseInt(props.nb_vote))
@@ -20,6 +20,7 @@ function RightCont(props) {
         setCount(count + 1)
         const theme = props.theme
         const id = e.target.id
+        console.log(BASE_PATH)
 
         axios({
             method: 'POST',
