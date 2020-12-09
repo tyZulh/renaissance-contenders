@@ -56,6 +56,7 @@ const DisplayBattles = ({ match }) => {
       chooseFighter();
       conto[1](!conto[0])
     }
+
     return () => {
       clearInterval(rebours);
     };
