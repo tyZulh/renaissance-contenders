@@ -12,8 +12,20 @@ const ContendersCircles = (props) => {
     const jpsr = chala[0]
     const theme = props.info.params.style
 
+    useEffect(() => {
+        const fetchData = async () => {
+            const url = `https://citizen-court-api.captain.citizen-court.tech/${theme}/all`
+            const request = await axios.get(url)
+    
+            const arr = [...request.data]
+            const finalArr = arr.sort((a, b) => {
+                return a.nb_vote - b.nb_vote
+            }).reverse()
+            setImageCircle(finalArr)
+        }
 
-
+        fetchData();      
+    }, [theme])
 
     useEffect(() => {
         const fetchData = async () => {
@@ -28,7 +40,7 @@ const ContendersCircles = (props) => {
         }
 
         fetchData();      
-    }, [theme, jpsr])
+    }, [jpsr])
 
     return (
         <div className='contendersCirclesContainer'>

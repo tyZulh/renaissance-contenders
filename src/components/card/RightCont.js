@@ -1,11 +1,10 @@
 import './RightCont.css'
-import like from '../assets/like.png'
+
 import commentlogo from '../assets/comment.png'
 import { useEffect, useState } from 'react'
-import qs from 'qs'
+
 import axios from 'axios'
 
-const BASE_PATH = process.env.REACT_APP_API_URL
 
 
 function RightCont(props) {
@@ -18,24 +17,11 @@ function RightCont(props) {
 
     const changeCount = (e) => {
         setCount(count + 1)
-        const theme = props.theme
+       
+        const theme = props.theme.params.style
         const id = e.target.id
-
-        axios({
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            url: `https://citizen-court-api.captain.citizen-court.tech/${theme}/edit/${id}`,
-            data: qs.stringify({
-                nb_vote: count
-            })
-        })
+        axios.post(`https://citizen-court-api.captain.citizen-court.tech/${theme}/edit/${id}`).then((res) => setCount(res.data))
     }
-    // axios.post(`http://1f5403262dc5.ngrok.io/${theme}/edit/${id}`, qs.stringify({
-    //     nb_vote: count
-    // }) )
-    //     .then(res => console.log('dzfksfjkshdlfjkzhdfjlkdf', res ))
-    // }
-
 
     return (
         <div className="card-container">

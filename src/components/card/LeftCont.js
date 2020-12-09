@@ -1,6 +1,6 @@
 import './LeftCont.css'
 import commentlogo from '../assets/comment.png'
-import { useContext, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 
 
@@ -32,11 +32,9 @@ function LeftCont(props) {
 
             {props.theme.params.style === 'fashion' && <h4 >By {props.name}</h4>}
 
-
             <div className="card-work">
                 {props.theme.params.style === 'philosopher' ? <h3 className="text-quote"> <img className="quote" src="https://i.postimg.cc/yxkQqYHD/left-quote.png" /> {props.artist}</h3> : <img className="card-player" alt="artist" src={props.url} />}
             </div>
-
 
             <div className="user-interaction-left">
                 <img className="comment logo" alt="comment" src={commentlogo} />
@@ -46,13 +44,9 @@ function LeftCont(props) {
                         src="https://i.postimg.cc/X7fKrbqt/Ei-heart.png"
                         id={props.id}
                     />
-
-                        {count}
-                
-
+                    {count}
+                </div>
             </div>
-
-        </div>
     )
 }
 
